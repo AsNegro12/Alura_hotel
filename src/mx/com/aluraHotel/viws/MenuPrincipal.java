@@ -1,5 +1,11 @@
 package mx.com.aluraHotel.viws;
 
-public class MenuPrincipal {
+import javax.swing.JFrame;
 
+public class MenuPrincipal extends JFrame
+{
+	public static void main(String[] args)
+	{
+		
+	}
 }

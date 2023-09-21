@@ -88,16 +88,16 @@ public class MenuPrincipal extends JFrame {
 		panel_1.add(lblCopyR);
 		panel.setLayout(null);
 		
-		JLabel lblHeader = new JLabel("");
-		lblHeader.setBounds(0, 0, 910, 37);
-		lblHeader.addMouseMotionListener(new MouseMotionAdapter() {
+		JPanel Header = new JPanel();
+		Header.setBounds(0, 0, 910, 37);
+		Header.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseDragged(MouseEvent e)
 			{
 				headerMouseDragged(e);
 			}
 		});
-		lblHeader.addMouseListener(new MouseAdapter()
+		Header.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mousePressed(MouseEvent e)
@@ -105,11 +105,12 @@ public class MenuPrincipal extends JFrame {
 				headerMousePressed(e);
 			}
 		});
-		lblHeader.setLayout(null);
-		lblHeader.setBackground(Color.WHITE);
-		panel.add(lblHeader);
+		Header.setLayout(null);
+		Header.setBackground(Color.WHITE);
+		panel.add(Header);
 		
-		JLabel btnExit = new JLabel("");
+		JPanel btnExit = new JPanel();
+		btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e)
@@ -131,10 +132,15 @@ public class MenuPrincipal extends JFrame {
 			}
 		});
 		btnExit.setLayout(null);
-		btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnExit.setBackground(Color.WHITE);
 		btnExit.setBounds(857, 0, 53, 36);
-		lblHeader.add(btnExit);
+		Header.add(btnExit);
+		
+		labelExit = new JLabel("X");
+		btnExit.add(labelExit);
+		labelExit.setBounds(0, 0, 53, 36);
+		labelExit.setFont(new Font("Roboto", Font.PLAIN, 18));
+		labelExit.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel btnLogin = new JLabel("");
 		btnLogin.addMouseListener(new MouseAdapter() {
@@ -165,12 +171,6 @@ public class MenuPrincipal extends JFrame {
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setForeground(SystemColor.textHighlight);
 		lblTitulo.setFont(new Font("Roboto Light", Font.PLAIN, 20));
-		
-		labelExit = new JLabel("X");
-		panel.add(labelExit);
-		labelExit.setBounds(857, 11, 53, 14);
-		labelExit.setFont(new Font("Roboto", Font.PLAIN, 18));
-		labelExit.setHorizontalAlignment(SwingConstants.CENTER);
 		
 	}
 	
